@@ -26,7 +26,7 @@ contract bank{
 
         require(is_user[msg.sender],'User not exits');
         require(user_balance[msg.sender]>=amount,'Not much amount to be withdraw');
-        require(payable(abc).send(amount));
+        require(payable(msg.sender).send(amount));
         user_balance[msg.sender]-=amount;
         
     }
